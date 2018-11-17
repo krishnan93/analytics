@@ -1,0 +1,43 @@
+#Data frame ----
+(rollno= 1:30)
+(sname=paste("student",1:30))
+(gender= sample(c("M","F"), size=30, replace=T))
+table(gender)
+set.seed(12333)
+(gender= sample(c("M","F"), size=30, replace=T))
+table(gender)
+(gender= sample(c("M","F"), size=30, replace=T))
+table(gender)
+set.seed(12333)
+(gender= sample(c("M","F"), size=30, replace=T))
+table(gender)
+(gender= sample(c("M","F"), size=30, replace=T, prob=c(0.7,0.3)))
+table(gender)
+prop.table(table(gender))
+(rollno= 1:30)
+(sname=paste("student",1:30))
+(gender=sample(c('M','F'), size=30, replace=T, prob=c(0.7,0.3)))
+(marks1=floor(rnorm(30, mean=50, sd=10)))
+(marks2=ceiling(rnorm(30,40,5)))
+(course=sample(c('BBA','MBA'), size =30, replace=T, prob=c(0.5,0.5)))
+rollno;sname;gender;marks1;marks2;course;
+
+#create df
+df1=data.frame(rollno, sname,gender, marks1, marks2, course, stringsAsFactors = F)
+str(df1)
+head(df1)
+class(df1)
+tail(df1, n=3)
+summary(df1)
+df1
+df1$gender=factor(df1$gender)
+df1$course=factor(df1$course)
+summary(df1)
+df1(1:5,1:4)
+df1[1:5,1:4]
+df1[marks1>50 | gender=='F',]
+aggregate(df1$marks1, by=list(df1$gender), FUN=sum)
+(rollno= 1:30)
+(sname=paste("student",1:30))
+aggregate(df1$marks1, by=list(df1$gender), FUN=max)
+aggregate(df1$marks1, by=list(df1$gender,df1$course), FUN=max)
