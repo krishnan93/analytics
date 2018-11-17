@@ -26,3 +26,26 @@ df1$course=factor(df1$course)
 df1
 (rollno)
 df1
+rollno[1]
+df1
+
+library(dplyr)
+df1 %>% group_by(gender) %>% summarise(mean(marks1))
+df1 %>% group_by(gender) %>% summarise(mean(marks1))   
+df1 %>% group_by(gender) %>% summarise(MeanM1=mean(marks1), MeanM2=mean(marks2))
+summarise(mtcars, avg = mean(mpg))                                       
+summarise(mtcars, avg = mean(mpg))                                       
+names(mtcars)
+mtcars %>% group_by(am, gear) %>% summarise(meanMPG= mean(mpg) %>% arrange(meanMPG))
+table(mtcars$carb)
+mtcars %>% group_by(am) %>% table(mtcars$carb)
+table(mtcars$cyl, mtcars$am, mtcars$gear)
+xtabs(~ cyl + am + gear, data=mtcars)
+
+
+mtcars %>% group_by(am, gear) %>% summarise(meanMPG= mean(mpg)) %>% arrange(meanMPG)
+
+mtcars %>% select(mpg, wt) %>% slice(c(1,2,4))
+seq(1,32,2)
+mtcars %>% select(mpg, wt)%>% slice(seq(1,32,2))
+mtcars %>% filter(mpg>20 & hp<80) %>% select(mpg,wt,hp,am)

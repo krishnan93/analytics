@@ -4,6 +4,7 @@
 # Should know - import, table, dplyr, aggregate etc
 
 #read file : Method1
+
 sales1 = read.csv("./data/denco.csv")
 str(sales1) #see if data is loaded and check its structure
 head(sales1)
