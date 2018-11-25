@@ -60,3 +60,12 @@ library(caret)
 library(e1071)
 library(Matrix)
 install.packages("lattice")
+
+library(InformationValue)
+concord=Concordance(train$survived, train$score)
+(concord)
+ks_plot(train$survived,train$score)
+plotROC(actuals=train$survived,predictedScores = bestmodel$fitted.values)
+bestmodel$fitted.values
+ks_plot(train$survived,bestmodel$fitted.values)
+ks_stat(train$survived,bestmodel$fitted.values)
